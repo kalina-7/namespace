@@ -7,9 +7,10 @@ def read_info(name):
     file = open(name, 'r')
     while True:
         content = file.readline()
-        all_data.append(content)
         if not content:
             break
+        else:
+            all_data.append(content)
     file.close()
 
 
@@ -37,4 +38,5 @@ if __name__ == '__main__':
         p.map(read_info, filenames)
 
     stop_time_2 = datetime.datetime.now()
+
     print(f'{stop_time_2 - start_time_2} (многопроцессный)')
